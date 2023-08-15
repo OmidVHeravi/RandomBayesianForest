@@ -40,15 +40,16 @@ This project aims to predict the future prices of financial assets using a hybri
 
 ## Quick Start
 
-1. Clone the repository:
 ```bash
+1. Clone the repository:
+
 git clone https://github.com/OmidVHeravi/RandomBayesianForest.git
 cd RandomBayesianForest
 
-3. Install the required packages:
-```bash
+2. Install the required packages:
+
 pip install -r requirements.txt
 
 3. Run the main script
-```bash
+
 python rbf.py
