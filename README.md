@@ -50,10 +50,10 @@ $$
 
 Where:
 
-- $ P(A|B) $ is the posterior probability of event $ A $ given evidence $ B $.
-- $ P(B|A) $ is the likelihood of observing evidence $ B $ given $ A $ is true.
-- $ P(A) $ is the prior probability of $ A $ (i.e., our belief about $ A $ before seeing evidence $ B $.
-- $ P(B) $ is the total probability of observing evidence $B $.
+- $P(A|B)$ is the posterior probability of event $A$ given evidence $B$.
+- $P(B|A)$ is the likelihood of observing evidence $B$ given $A$ is true.
+- $P(A)$ is the prior probability of $A$ (i.e., our belief about $A$ before seeing evidence $B$.
+- $P(B)$ is the total probability of observing evidence $B$.
 
 In our model, the Bayesian update is specifically used for refining the estimates of the mean and variance for the node values in our Bayesian decision tree. The formulas for this are:
 
@@ -77,9 +77,9 @@ $$
 
 Where:
 
-- $ x $ is a data point.
+- $x$ is a data point.
 - $\mu$ is the mean of the distribution.
-- $ \sigma^2 $ is the variance.
+- $\sigma^2$ is the variance.
 
 For our model, the likelihood of the data given the mean and variance is computed using this formula.
 
@@ -93,9 +93,9 @@ $$
 
 Where:
 
-- $ \ln $ is the natural logarithm.
-- $ k $ is the number of parameters in the model.
-- $ n $ is the number of data points.
+- $\ln$ is the natural logarithm.
+- $k$ is the number of parameters in the model.
+- $n$ is the number of data points.
 
 The model with the lowest BIC is generally preferred because it strikes the best balance between fit and complexity. In the context of our Bayesian decision tree, BIC helps determine the best feature and threshold for splitting the data at each node.
 
@@ -169,3 +169,4 @@ pip install -r requirements.txt
 
 python rbf.py
 
+```
