@@ -44,26 +44,26 @@ This project aims to predict the future prices of financial assets using a hybri
 
 A Bayesian update is the process of revising beliefs (probabilities) in light of new evidence. The Bayesian approach is rooted in Bayes' Theorem:
 
-\[
+$$
 P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}
-\]
+$$
 
 Where:
 
-- \( P(A|B) \) is the posterior probability of event \( A \) given evidence \( B \).
-- \( P(B|A) \) is the likelihood of observing evidence \( B \) given \( A \) is true.
-- \( P(A) \) is the prior probability of \( A \) (i.e., our belief about \( A \) before seeing evidence \( B \)).
-- \( P(B) \) is the total probability of observing evidence \( B \).
+- $ P(A|B) $ is the posterior probability of event $ A $ given evidence $ B $.
+- $ P(B|A) $ is the likelihood of observing evidence $ B $ given $ A $ is true.
+- $ P(A) $ is the prior probability of $ A $ (i.e., our belief about $ A $ before seeing evidence $ B $.
+- $ P(B) $ is the total probability of observing evidence $B $.
 
 In our model, the Bayesian update is specifically used for refining the estimates of the mean and variance for the node values in our Bayesian decision tree. The formulas for this are:
 
-\[
+$$
 \text{posterior variance} = \left( \frac{1}{\text{prior variance}} + \frac{\text{data size}}{\text{likelihood variance}} \right)^{-1}
-\]
+$$
 
-\[
+$$
 \text{posterior mean} = \left( \frac{\text{prior mean}}{\text{prior variance}} + \frac{\text{likelihood mean} \times \text{data size}}{\text{likelihood variance}} \right) \times \text{posterior variance}
-\]
+$$
 
 Where the prior mean and variance represent our initial beliefs, and the likelihood mean and variance are derived from the data.
 
@@ -71,15 +71,15 @@ Where the prior mean and variance represent our initial beliefs, and the likelih
 
 The likelihood function measures the goodness of fit of our model to the data. The likelihood for our model is based on the Gaussian (or normal) distribution. The probability density function (pdf) of the Gaussian distribution is:
 
-\[
+$$
 f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
-\]
+$$
 
 Where:
 
-- \( x \) is a data point.
-- \( \mu \) is the mean of the distribution.
-- \( \sigma^2 \) is the variance.
+- $ x $ is a data point.
+- $\mu$ is the mean of the distribution.
+- $ \sigma^2 $ is the variance.
 
 For our model, the likelihood of the data given the mean and variance is computed using this formula.
 
@@ -87,21 +87,18 @@ For our model, the likelihood of the data given the mean and variance is compute
 
 BIC is a criterion for model selection. It balances the likelihood of the model against its complexity (number of parameters). The formula for BIC is:
 
-\[
+$$
 BIC = -2\ln(\text{likelihood}) + k\ln(n)
-\]
+$$
 
 Where:
 
-- \( \ln \) is the natural logarithm.
-- \( k \) is the number of parameters in the model.
-- \( n \) is the number of data points.
+- $ \ln $ is the natural logarithm.
+- $ k $ is the number of parameters in the model.
+- $ n $ is the number of data points.
 
 The model with the lowest BIC is generally preferred because it strikes the best balance between fit and complexity. In the context of our Bayesian decision tree, BIC helps determine the best feature and threshold for splitting the data at each node.
 
-Certainly! Let's delve into the math and concepts behind `select_best_split` and `bayesian_decision_tree`.
-
----
 
 ### Selecting the Best Split (`select_best_split`)
 
