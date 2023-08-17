@@ -72,7 +72,7 @@ Where the prior mean and variance represent our initial beliefs, and the likelih
 The likelihood function measures the goodness of fit of our model to the data. The likelihood for our model is based on the Gaussian (or normal) distribution. The probability density function (pdf) of the Gaussian distribution is:
 
 $$
-f(x|\mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
+f(x | \mu, \sigma^2) = \frac{1}{\sqrt{2\pi\sigma^2}} \exp\left( -\frac{(x-\mu)^2}{2\sigma^2} \right)
 $$
 
 Where:
